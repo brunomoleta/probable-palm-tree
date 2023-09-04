@@ -1,0 +1,30 @@
+@import "./flex.scss";
+@import "./transition.scss";
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+.bold {
+  font-weight: var(--bold);
+}
+
+.heading {
+  font-size: var(--text-summary);
+  color: var(--color-black);
+
+  @include transition($t: color);
+  
+  &:hover {
+    color: var(--color-red);
+  }
+  .active {
+    font-weight: var(--bold);
+  }
+}
+
+.paragraph {
+  font-size: var(--text-details);
+  color: var(--color-grey-500);
+}

@@ -1,0 +1,46 @@
+@import "./sizing.scss";
+@import "./flex.scss";
+@import "./position.scss";
+@import "./padding.scss";
+@import "./container.scss";
+@import "./stack.scss";
+@import "./margin.scss";
+
+.grid {
+  display: grid;
+}
+
+.justify-items-center {
+  justify-items: center;
+}
+
+.justify-self-center {
+  justify-self: center;
+}
+
+.grid-col-auto-auto {
+  grid-template-columns: auto auto;
+}
+
+.grid-row-auto-1-auto {
+  @extend .grid;
+  grid-template-rows:
+    auto 1fr auto;
+}
+
+.grid-col-1-auto {
+  grid-template-columns: 1fr auto;
+}
+
+
+.grid-row-auto-1 {
+  grid-template-rows: auto 1fr;
+}
+
+.justify-self-b {
+  justify-self: baseline;
+}
+
+.justify-self-end {
+  justify-self: end;
+}
