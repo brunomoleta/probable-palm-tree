@@ -1,0 +1,19 @@
+@import "./padding.scss";
+@import "./sizing.scss";
+@import "./flex.scss";
+@import "./stack.scss";
+@import "./colors.scss";
+
+
+.container {
+  max-width: 75rem;
+  @extend .grid;
+  @extend .justify-items-center;
+  @extend .w-full;
+  @extend .bg-white;
+
+  @include padding($p: var(--s4));
+
+  border-radius: var(--large-radius);
+  box-shadow: var(--box-shadow);
+}
