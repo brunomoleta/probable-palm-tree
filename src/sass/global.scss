@@ -1,0 +1,10 @@
+@import "./sizing.scss";
+@import "./grid.scss";
+@import "./colors.scss";
+
+
+#root {
+    @extend .h-full;
+    @extend .grid;
+    @extend .bg-color;
+}
