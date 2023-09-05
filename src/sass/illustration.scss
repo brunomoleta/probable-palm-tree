@@ -1,0 +1,26 @@
+@import "./padding.scss";
+@import "./sizing.scss";
+@import "./flex.scss";
+@import "./stack.scss";
+@import "./colors.scss";
+
+.shadow {
+    @extend .absolute;
+    @extend .bottom-shadow;
+}
+.halo-1 {
+    @extend .absolute;
+    bottom: 7rem;
+}
+.halo-1 {
+    @extend .absolute;
+    bottom: 10rem;
+}
+
+.op-99 {
+    opacity: .99;
+}
+
+.op-98 {
+    opacity: .98;
+}
