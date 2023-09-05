@@ -6,13 +6,15 @@
 
 
 .container {
-  max-width: 75rem;
   @extend .grid;
   @extend .justify-items-center;
   @extend .w-full;
   @extend .bg-white;
+  @extend .container-max-w;
+  @extend .container-max-h;
 
-  @include padding($p: var(--s4));
+
+  @include padding-block($p: var(--s4));
 
   border-radius: var(--large-radius);
   box-shadow: var(--box-shadow);

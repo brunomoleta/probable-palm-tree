@@ -1,9 +1,9 @@
 @import "./flex.scss";
 @import "./transition.scss";
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap");
 
 body {
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 .bold {
@@ -15,7 +15,7 @@ body {
   color: var(--color-black);
 
   @include transition($t: color);
-  
+
   &:hover {
     color: var(--color-red);
   }
@@ -24,7 +24,40 @@ body {
   }
 }
 
+.color-red {
+  color: var(--color-red);
+}
+
+.color-grey {
+  color: var(--color-grey-500);
+}
+
+.color-white {
+  color: var(--color-white);
+}
+
+.hv-color-white {
+  color: var(--color-black);
+  @include transition($t: color);
+  &:hover {
+    color: var(--color-white);
+  }
+}
+
+.underline {
+  text-decoration: underline;
+}
+
 .paragraph {
   font-size: var(--text-details);
   color: var(--color-grey-500);
+}
+
+.top-heading {
+  @extend .bold;
+  font-size: var(--text-heading);
+}
+
+.text-align-left {
+  text-align: text-align-left;
 }

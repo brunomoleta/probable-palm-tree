@@ -6,9 +6,15 @@
 .w-auto {
   width: auto;
 }
+
 .container-max-w {
   max-width: var(--container-max-w);
 }
+
+.container-max-h {
+  max-height: var(--container-max-h);
+}
+
 .h-full {
   height: 100%;
 }
@@ -25,4 +31,7 @@
 }
 .h-full-dvh {
   height: 100dvh;
+}
+.min-h-full {
+  min-height: 100dvh;
 }

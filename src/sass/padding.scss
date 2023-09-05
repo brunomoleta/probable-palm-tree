@@ -1,8 +1,14 @@
 @mixin padding-inline($p: var(--s0)) {
   padding-inline: $p;
 }
+@mixin padding-inline-end($p: var(--s0)) {
+  padding-inline-end: $p;
+}
 @mixin padding-block($p: var(--s0)) {
   padding-block: $p;
+}
+@mixin padding-block-end($p: var(--s0)) {
+  padding-block-end: $p;
 }
 @mixin padding($p: var(--s0)) {
   padding: $p;
@@ -10,6 +16,9 @@
 
 .padding-i-0 {
   padding-inline: 0;
+}
+.padding-i-end-2 {
+  padding-inline-end: var(--s2);
 }
 
 .padding-b-0 {

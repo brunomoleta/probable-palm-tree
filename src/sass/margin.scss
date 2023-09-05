@@ -17,3 +17,8 @@
   @mixin margin-left($m: var(--s0)) {
     margin-inline-start: $m;
   }
+
+  .margin-i-end {
+  margin-inline-end: var(--s3);
+
+  }
