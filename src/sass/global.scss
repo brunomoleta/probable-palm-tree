@@ -3,27 +3,34 @@
 @import "./colors.scss";
 @import "./margin.scss";
 
-
 #root {
-    @extend .grid;
-    @extend .bg-color;
-    @extend .min-h-full;
+  @extend .grid;
+  @extend .bg-color;
+  @extend .min-h-full;
 }
 
 .footer {
-    // margin-block-end: var(--s4);
-    @include padding-block-end($p: var(--s3));
+  // margin-block-end: var(--s4);
+  @include padding-block-end($p: var(--s3));
 }
 
 .canvas {
-    background-color: var(--color-grey-000);
-    width: var(--measure);
-    height: 1.5px;
-    border-radius: 2px;
+  width: var(--measure);
+  height: 1.5px;
+  border-radius: 2px;
+  background-color: var(--color-grey-000);
+  
+  transform: background-color 300ms;
+}
+
+  .active {
+
+  // height: 10px;
+    background-color: var(--color-red);
 }
 
 main {
-    @media (min-width: 800px) {
-        @include padding-inline($p: var(--s3))
-    }
+  @media (min-width: 800px) {
+    @include padding-inline($p: var(--s3));
+  }
 }
