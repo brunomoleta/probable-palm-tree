@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import { useContext, createContext, useState } from "react";
-// import { database } from "../database/database";
 
 const accordeonContext = createContext({});
 
@@ -25,6 +24,7 @@ export const AccordeonProvider = ({ children }) => {
     "align-items-center": true,
     heading: true,
   });
+
   const summaryClassesBold = clsx({
     flex: true,
     "space-between": true,
@@ -33,11 +33,25 @@ export const AccordeonProvider = ({ children }) => {
     bold: true,
   });
 
+  const rotated = clsx({
+    "rotated-arrow": true,
+    "color-red": true,
+  });
+
+  const notRotated = clsx({
+    "not-rotated-arrow": true,
+    "color-red": true,
+  });
+
+  const canvasClasses = clsx({
+    canvas: true,
+    active: active.length > 0,
+  });
+
   const addId = (id) => {
-    active.some((idInside) => idInside === id)
-      ? null
-      : setActive([...active, id]);
-    // cartList.some((item) => item.id === newProduct.id) ? tellUser() : addItem();
+    !active.some((idInside) => idInside === id)
+      ? setActive([...active, id])
+      : null;
   };
 
   const removeId = () => {
@@ -56,13 +70,16 @@ export const AccordeonProvider = ({ children }) => {
         detailsClasses,
         summaryClasses,
         summaryClassesBold,
+        rotated,
+        notRotated,
         active,
+        canvasClasses,
         setActive,
         addId,
         removeId,
         removeAddId,
-        toggleDetails,
-        detailsRef,
+        // toggleDetails,
+        // detailsRef,
       }}
     >
       {children}

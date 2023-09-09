@@ -1,5 +1,6 @@
 import { RiArrowDownSLine } from "react-icons/ri";
 import { useAccordeonContext } from "../Provider/accordeonContext";
+// import { useEffect } from "react";
 
 /* eslint-disable react/prop-types */
 export const DetailsItem = (props) => {
@@ -7,6 +8,9 @@ export const DetailsItem = (props) => {
     summaryClasses,
     summaryClassesBold,
     detailsClasses,
+    canvasClasses,
+    rotated,
+    notRotated,
     removeId,
     addId,
     active,
@@ -15,29 +19,36 @@ export const DetailsItem = (props) => {
 
   const { summary, paragraph, item } = props;
 
+  // useEffect(() => {
+  //   console.log(active);
+  // }, [active]);
+
   return (
     <>
-      <details
-        onClick={() => {
-          active.length === 0
-            ? addId(item.id)
-            : active[0] === item.id
-            ? removeId()
-            : removeAddId(item.id);
-        }}
-        className={detailsClasses}
-      >
+      <details className={detailsClasses}>
         <summary
+          onClick={() => {
+            active.length === 0
+              ? addId(item.id)
+              : active[0] === item.id
+              ? removeId()
+              : removeAddId(item.id);
+          }}
           className={
             active[0] === item.id ? summaryClassesBold : summaryClasses
           }
         >
           {summary}
-          <RiArrowDownSLine className="color-red" size={30} />
+          <RiArrowDownSLine
+            className={active[0] === item.id ? rotated : notRotated}
+            size={30}
+          />
         </summary>
         <p className="paragraph">{paragraph}</p>
       </details>
-      <canvas className="canvas"></canvas>
+      <canvas
+        className={active[0] === item.id ? canvasClasses : "canvas"}
+      ></canvas>
     </>
   );
 };
