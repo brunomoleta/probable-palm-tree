@@ -1,6 +1,7 @@
 import { DetailsItem } from "./DetailsItem";
 import { nanoid } from "nanoid";
-import { useAccordeonContext } from "../Provider/accordeonContext";
+import { database } from "../database/database";
+
 
 export const Details = () => {
 

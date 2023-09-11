@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import desktopIllustration from "../assets/images/illustration-woman-online-desktop.svg";
 import mobileIllustration from "../assets/images/illustration-woman-online-mobile.svg";
-// import halo from "../assets/images/halo.svg";
 
 import greybase from "../assets/images/illustration-shadow-desktop.svg";
 
@@ -13,23 +12,17 @@ export const Illustration = ({classname}) => {
         src={greybase}
         alt=""
       />
-      {/* <img
-        className="halo"
-        src={halo}
-        alt=""
-      /> */}
-
 
       <picture className="z-2 op-99">
         <source
           srcSet={desktopIllustration}
           type="image/webp"
-          media="(min-width: 800px)"
+          media="(min-width: 801px)"
         />
         <source
           srcSet={mobileIllustration}
           type="image/webp"
-          media="(min-width: 100px)"
+          media="(min-width: 1px)"
         />
         <img src={mobileIllustration} alt="Description" />
       </picture>

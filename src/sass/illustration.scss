@@ -5,22 +5,33 @@
 @import "./colors.scss";
 
 .shadow {
-    @extend .absolute;
-    @extend .bottom-shadow;
+  @extend .absolute;
+  @extend .bottom-shadow;
 }
 .halo-1 {
-    @extend .absolute;
-    bottom: 7rem;
+  @extend .absolute;
+  bottom: 7rem;
 }
 .halo-1 {
-    @extend .absolute;
-    bottom: 10rem;
+  @extend .absolute;
+  bottom: 10rem;
+}
+
+.illustration {
+  top: -70%;
+  width: clamp(55%, 80dvw, 70%);
+
+  @media (min-width: 801px) {
+    top: inherit;
+    width: 100%;
+    left: -3.5rem;
+  }
 }
 
 .op-99 {
-    opacity: .99;
+  opacity: 0.99;
 }
 
 .op-98 {
-    opacity: .98;
+  opacity: 0.98;
 }

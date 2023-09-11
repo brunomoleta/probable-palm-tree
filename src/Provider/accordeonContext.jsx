@@ -13,9 +13,21 @@ export const useAccordeonContext = () => {
 // eslint-disable-next-line react/prop-types
 export const AccordeonProvider = ({ children }) => {
   const [active, setActive] = useState([]);
-  const [open, setOpen] = useState(-1);
 
-  const newList = database.map((item, index) => ({ ...item, id: index }));
+  const [open, setOpen] = useState(database.map((item) => item === false));
+
+  const handleDetails = (id) => {
+    if (active[0] === id) {
+      const newArray = [...open];
+
+      newArray[id] = true;
+      setOpen(newArray);
+    } else {
+      const newArray = open.map((item) => item === false);
+
+      setOpen(newArray);
+    }
+  };
 
   const detailsClasses = clsx({
     "w-full": true,
@@ -27,6 +39,7 @@ export const AccordeonProvider = ({ children }) => {
     flex: true,
     "space-between": true,
     "align-items-center": true,
+    "details-gap": true,
     heading: true,
   });
 
@@ -34,6 +47,7 @@ export const AccordeonProvider = ({ children }) => {
     flex: true,
     "space-between": true,
     "align-items-center": true,
+    "details-gap": true,
     heading: true,
     bold: true,
   });
@@ -86,11 +100,10 @@ export const AccordeonProvider = ({ children }) => {
         removeId,
         removeAddId,
 
-        newList,
-
         setOpen,
         open,
 
+        handleDetails,
       }}
     >
       {children}
