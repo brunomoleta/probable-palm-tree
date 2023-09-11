@@ -1,6 +1,5 @@
 import { RiArrowDownSLine } from "react-icons/ri";
 import { useAccordeonContext } from "../Provider/accordeonContext";
-// import { useEffect } from "react";
 
 /* eslint-disable react/prop-types */
 export const DetailsItem = (props) => {
@@ -15,19 +14,17 @@ export const DetailsItem = (props) => {
     addId,
     active,
     removeAddId,
+
   } = useAccordeonContext();
 
   const { summary, paragraph, item } = props;
-
-  // useEffect(() => {
-  //   console.log(active);
-  // }, [active]);
 
   return (
     <>
       <details className={detailsClasses}>
         <summary
           onClick={() => {
+
             active.length === 0
               ? addId(item.id)
               : active[0] === item.id
