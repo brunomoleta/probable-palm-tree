@@ -4,9 +4,7 @@ import { useAccordeonContext } from "../Provider/accordeonContext";
 
 export const Details = () => {
 
-  const {
-    newList,
-  } = useAccordeonContext();
+  const newList = database.map((item, index) => ({ ...item, id: index }));
 
   return (
     <>
