@@ -1,5 +1,5 @@
 import { Illustration } from "./Illustration";
-import { Details } from "./details";
+import { Details } from "./Details";
 
 import box from "../assets/images/illustration-box-desktop.svg";
 
