@@ -15,7 +15,6 @@
   position: fixed;
 }
 
-
 .obj-fit-cover {
   object-fit: cover;
   object-position: center;
@@ -34,22 +33,23 @@
 }
 
 .bottom-shadow {
-  top: 8.15rem;
+  top: 40%;
 }
 
 .top-box {
-  top: 15.0rem;
+  top: 42.5%;
 }
 
 .left-box {
-  left: -5.50rem;
-  
-}
-
-.left-illustration {
-  left: -3.50rem;
+  left: -5.5rem;
 }
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow {
+  @media (min-width: 801px) {
+    overflow: hidden;
+  }
 }

@@ -10,7 +10,6 @@
 }
 
 .footer {
-  // margin-block-end: var(--s4);
   @include padding-block-end($p: var(--s3));
 }
 
@@ -19,18 +18,25 @@
   height: 1.5px;
   border-radius: 2px;
   background-color: var(--color-grey-000);
-  
+
   transform: background-color 300ms;
 }
 
-  .active {
-
-  // height: 10px;
-    background-color: var(--color-red);
+.active {
+  background-color: var(--color-red);
 }
 
-main {
-  @media (min-width: 800px) {
-    @include padding-inline($p: var(--s3));
+.main {
+  @media (max-width: 801px) {
+  margin-block-start: 25%;
   }
+}
+
+.main,
+footer {
+  padding-inline: clamp(var(--s0), 10dvw, var(--s5));
+}
+
+svg {
+  min-width: 1rem;
 }
