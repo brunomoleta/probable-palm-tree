@@ -3,7 +3,7 @@ import { database } from "../database/database";
 import { nanoid } from "nanoid";
 
 export const Details = () => {
-  const newList = database.map((item) => ({ ...item, id: nanoid() }));
+  const newList = database.map((item, index) => ({ ...item, id: index }));
 
   return (
     <>
