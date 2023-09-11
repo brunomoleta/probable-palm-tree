@@ -22,18 +22,20 @@ export const AccordeonProvider = ({ children }) => {
     "text-align-left": true,
     "stack-large": true,
   });
-
+  
   const summaryClasses = clsx({
     flex: true,
     "space-between": true,
     "align-items-center": true,
+    "details-gap": true,
     heading: true,
   });
-
+  
   const summaryClassesBold = clsx({
     flex: true,
     "space-between": true,
     "align-items-center": true,
+    "details-gap": true,
     heading: true,
     bold: true,
   });

@@ -38,9 +38,6 @@
   gap: $g;
 }
 
-
-.form__register-gap {
-  @media (max-width: 949px) {
-    gap: var(--s1);
-  }
+.details-gap {
+  gap: var(--s-1);
 }
