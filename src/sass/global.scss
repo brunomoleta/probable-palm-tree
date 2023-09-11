@@ -40,3 +40,22 @@ footer {
 svg {
   min-width: 1rem;
 }
+
+details[open] summary~* {
+  animation: open 700ms ;
+}
+
+@keyframes open {
+  0% {
+    opacity: 0;
+    transform: translateY(-1vw);
+  }
+  0% {
+    opacity: .30;
+    transform: translateY(-.3vw);
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0px
+  }
+}
