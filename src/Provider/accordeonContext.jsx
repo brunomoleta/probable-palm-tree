@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import { useContext, createContext, useState } from "react";
 
+import { database } from "../database/database";
+
 const accordeonContext = createContext({});
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -11,6 +13,9 @@ export const useAccordeonContext = () => {
 // eslint-disable-next-line react/prop-types
 export const AccordeonProvider = ({ children }) => {
   const [active, setActive] = useState([]);
+  const [open, setOpen] = useState(-1);
+
+  const newList = database.map((item, index) => ({ ...item, id: index }));
 
   const detailsClasses = clsx({
     "w-full": true,
@@ -67,19 +72,25 @@ export const AccordeonProvider = ({ children }) => {
   return (
     <accordeonContext.Provider
       value={{
+        canvasClasses,
         detailsClasses,
         summaryClasses,
         summaryClassesBold,
         rotated,
         notRotated,
+
         active,
-        canvasClasses,
         setActive,
+
         addId,
         removeId,
         removeAddId,
-        // toggleDetails,
-        // detailsRef,
+
+        newList,
+
+        setOpen,
+        open,
+
       }}
     >
       {children}
