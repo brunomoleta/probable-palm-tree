@@ -22,7 +22,7 @@ export const DetailsItem = (props) => {
   return (
     <>
       <details
-        open={ () => active[0] === item.id}
+        open={ () => null}
         className={detailsClasses}
       >
         <summary
