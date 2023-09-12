@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import { useContext, createContext, useState } from "react";
 
-
 const accordeonContext = createContext({});
 
 // eslint-disable-next-line react-refresh/only-export-components
@@ -12,8 +11,6 @@ export const useAccordeonContext = () => {
 // eslint-disable-next-line react/prop-types
 export const AccordeonProvider = ({ children }) => {
   const [active, setActive] = useState([]);
-
-
 
   const detailsClasses = clsx({
     "w-full": true,
@@ -85,7 +82,6 @@ export const AccordeonProvider = ({ children }) => {
         addId,
         removeId,
         removeAddId,
-
       }}
     >
       {children}
