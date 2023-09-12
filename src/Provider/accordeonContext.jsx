@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import { useContext, createContext, useState } from "react";
 
-import { database } from "../database/database";
 
 const accordeonContext = createContext({});
 
@@ -14,20 +13,7 @@ export const useAccordeonContext = () => {
 export const AccordeonProvider = ({ children }) => {
   const [active, setActive] = useState([]);
 
-  const [open, setOpen] = useState(database.map((item) => item === false));
 
-  const handleDetails = (id) => {
-    if (active[0] === id) {
-      const newArray = [...open];
-
-      newArray[id] = true;
-      setOpen(newArray);
-    } else {
-      const newArray = open.map((item) => item === false);
-
-      setOpen(newArray);
-    }
-  };
 
   const detailsClasses = clsx({
     "w-full": true,
@@ -100,10 +86,6 @@ export const AccordeonProvider = ({ children }) => {
         removeId,
         removeAddId,
 
-        setOpen,
-        open,
-
-        handleDetails,
       }}
     >
       {children}
