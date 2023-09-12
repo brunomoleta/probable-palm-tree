@@ -1,0 +1,55 @@
+:root {
+  --ratio: 1.5;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+
+  // tamanho máximo para quebrar linha
+  --measure: 55ch;
+
+  --color-black: #000000;
+  --color-grey-500: #4b4c5f;
+  --color-grey-000: #e8e8ea;
+  --color-white: #ffffff;
+  --color-red: #f47b56;
+
+  --color-bg: linear-gradient(180deg, #b068e9 0%, #6463e7 100%);
+
+  --box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.5);
+
+  // Tipos de tipografia
+  --font-serif: "Lora", serif;
+  --font-sans-serif: "Inter", sans-serif;
+
+  // Tamanho da fonte
+
+  --text-heading: 2rem;
+  --text-summary: 1.125rem;
+  --text-details: 0.875rem;
+
+  // Espessura da fonte
+
+  --regular: 400;
+  --medium: 500;
+  --semi-bold: 600;
+  --bold: 700;
+
+  --large-radius: 1.5rem;
+
+  // espessura borda
+
+  --border-thickness: 2px solid;
+
+  --container-max-w: 60rem;
+  --container-max-h: 40rem;
+
+  --details-max-width: 22.5rem;
+}

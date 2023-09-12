@@ -1,0 +1,55 @@
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.sticky {
+  position: sticky;
+}
+.static {
+  position: static;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.obj-fit-cover {
+  object-fit: cover;
+  object-position: center;
+}
+
+.left-shadow {
+  left: 6.5rem;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+.z-2 {
+  z-index: 2;
+}
+
+.bottom-shadow {
+  top: 40%;
+}
+
+.top-box {
+  top: 42.5%;
+}
+
+.left-box {
+  left: -5.5rem;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow {
+  @media (min-width: 801px) {
+    overflow: hidden;
+  }
+}

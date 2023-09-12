@@ -1,0 +1,34 @@
+@import "./padding.scss";
+@import "./margin.scss";
+@import "./sizing.scss";
+@import "./flex.scss";
+@import "./stack.scss";
+@import "./colors.scss";
+
+.square {
+  display: none;
+  @media (min-width: 801px) {
+    display: block;
+  }
+}
+
+.container {
+  @extend .grid;
+  @extend .justify-items-center;
+  @extend .w-full;
+  @extend .bg-white;
+  @extend .container-max-w;
+
+  @include margin-block($m: var(--s1));
+
+  border-radius: var(--large-radius);
+  box-shadow: var(--box-shadow);
+}
+.section {
+  padding-block: clamp(var(--s-3), 15dvh, var(--s2));
+  padding-inline: clamp(var(--s-1), 5dvh, var(--s2));
+  @media (min-width: 801px) {
+    padding-inline-start: 0;
+    @include padding-block($p: var(--s4));
+  }
+}

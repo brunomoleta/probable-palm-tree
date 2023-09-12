@@ -1,0 +1,61 @@
+@import "./sizing.scss";
+@import "./grid.scss";
+@import "./colors.scss";
+@import "./margin.scss";
+
+#root {
+  @extend .grid;
+  @extend .bg-color;
+  @extend .min-h-full;
+}
+
+.footer {
+  @include padding-block-end($p: var(--s3));
+}
+
+.canvas {
+  width: var(--measure);
+  height: 1.5px;
+  border-radius: 2px;
+  background-color: var(--color-grey-000);
+
+  transform: background-color 300ms;
+}
+
+.active {
+  background-color: var(--color-red);
+}
+
+.main {
+  @media (max-width: 801px) {
+  margin-block-start: 25%;
+  }
+}
+
+.main,
+footer {
+  padding-inline: clamp(var(--s0), 10dvw, var(--s5));
+}
+
+svg {
+  min-width: 1rem;
+}
+
+details[open] summary~* {
+  animation: open 700ms ;
+}
+
+@keyframes open {
+  0% {
+    opacity: 0;
+    transform: translateY(-1vw);
+  }
+  0% {
+    opacity: .30;
+    transform: translateY(-.3vw);
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0px
+  }
+}
