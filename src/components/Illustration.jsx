@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import desktopIllustration from "../assets/images/illustration-woman-online-desktop.svg";
 import mobileIllustration from "../assets/images/illustration-woman-online-mobile.svg";
 

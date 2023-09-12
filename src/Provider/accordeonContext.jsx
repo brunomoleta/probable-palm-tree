@@ -3,12 +3,10 @@ import { useContext, createContext, useState } from "react";
 
 const accordeonContext = createContext({});
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const useAccordeonContext = () => {
   return useContext(accordeonContext);
 };
 
-// eslint-disable-next-line react/prop-types
 export const AccordeonProvider = ({ children }) => {
   const [active, setActive] = useState([]);
 

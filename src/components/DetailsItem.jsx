@@ -1,7 +1,6 @@
 import { RiArrowDownSLine } from "react-icons/ri";
 import { useAccordeonContext } from "../Provider/accordeonContext";
 
-/* eslint-disable react/prop-types */
 export const DetailsItem = (props) => {
   const {
     summaryClasses,
