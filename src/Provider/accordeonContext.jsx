@@ -24,25 +24,6 @@ export const AccordeonProvider = ({ children }) => {
     heading: true,
   });
 
-  const summaryClassesBold = clsx({
-    flex: true,
-    "space-between": true,
-    "align-items-center": true,
-    "details-gap": true,
-    heading: true,
-    bold: true,
-  });
-
-  const rotated = clsx({
-    "rotated-arrow": true,
-    "color-red": true,
-  });
-
-  const notRotated = clsx({
-    "not-rotated-arrow": true,
-    "color-red": true,
-  });
-
   const canvasClasses = clsx({
     canvas: true,
     active: active.length > 0,
@@ -70,9 +51,6 @@ export const AccordeonProvider = ({ children }) => {
         canvasClasses,
         detailsClasses,
         summaryClasses,
-        summaryClassesBold,
-        rotated,
-        notRotated,
 
         active,
         setActive,

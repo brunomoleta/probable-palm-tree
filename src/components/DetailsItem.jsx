@@ -4,26 +4,19 @@ import { useAccordeonContext } from "../Provider/accordeonContext";
 export const DetailsItem = (props) => {
   const {
     summaryClasses,
-    summaryClassesBold,
     detailsClasses,
     canvasClasses,
-    rotated,
-    notRotated,
     removeId,
     addId,
     active,
     removeAddId,
-
   } = useAccordeonContext();
 
   const { summary, paragraph, item } = props;
 
   return (
     <>
-      <details
-        open={ () => null}
-        className={detailsClasses}
-      >
+      <details open={() => null} className={detailsClasses}>
         <summary
           onClick={() => {
             active.length === 0
@@ -32,13 +25,13 @@ export const DetailsItem = (props) => {
               ? removeId()
               : removeAddId(item.id);
           }}
-          className={
-            active[0] === item.id ? summaryClassesBold : summaryClasses
-          }
+          className={`${summaryClasses} ${active[0] === item.id && `bold`}`}
         >
           {summary}
           <RiArrowDownSLine
-            className={active[0] === item.id ? rotated : notRotated}
+            className={`color-red ${
+              active[0] === item.id ? `rotated-arrow` : `not-rotated-arrow`
+            }`}
             size={30}
           />
         </summary>
