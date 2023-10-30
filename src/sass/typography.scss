@@ -7,7 +7,11 @@ body {
 }
 
 .bold {
+  color: var(--color-bg);
   font-weight: var(--bold);
+}
+.medium {
+  font-weight: 500;
 }
 
 .heading {
