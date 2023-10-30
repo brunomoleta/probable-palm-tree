@@ -12,33 +12,48 @@ export const DetailsItem = (props) => {
     removeAddId,
   } = useAccordeonContext();
 
-  const { summary, paragraph, item } = props;
+  const { summary, paragraph, id } = props;
 
-  const summaryClass = `${summaryClasses} ${active[0] === item.id && `bold`}`;
+  const summaryClass = `${summaryClasses} ${active[0] === id && `bold`}`;
   const arrowClass = `color-red ${
-    active[0] === item.id ? `rotated-arrow` : `not-rotated-arrow`
+    active[0] === id ? `rotated-arrow` : `not-rotated-arrow`
   }`;
+
+  const activateItem = () => {
+    if (active.length === 0) {
+      addId(id);
+    } else if (active[0] === id) {
+      removeId();
+    } else {
+      removeAddId(id);
+    }
+  };
 
   return (
     <>
-      <details open={() => null} className={detailsClasses}>
+      <details
+        aria-expanded={active[0] === id}
+        open={()=> true}
+        className={detailsClasses}
+      >
         <summary
-          onClick={() => {
-            active.length === 0
-              ? addId(item.id)
-              : active[0] === item.id
-              ? removeId()
-              : removeAddId(item.id);
-          }}
+          onClick={activateItem}
           className={summaryClass}
         >
           {summary}
-          <RiArrowDownSLine className={arrowClass} size={30} />
+          <RiArrowDownSLine
+            className={arrowClass}
+            size={32}
+            strokeWidth={active[0] === id ? 2.5 : 1}
+            color={active[0] === id && "var(--color-bg)"}
+          />
         </summary>
-        <p className="paragraph">{paragraph}</p>
+        <p className={active[0] === id ? "paragraph medium" : "paragraph"}>
+          {paragraph}
+        </p>
       </details>
       <canvas
-        className={active[0] === item.id ? canvasClasses : "canvas"}
+        className={active[0] === id ? canvasClasses : "canvas"}
       ></canvas>
     </>
   );
