@@ -12,6 +12,13 @@
   }
 }
 
+.summary {
+  &:focus{
+    outline-offset: 8px;
+    outline: 2px solid #6463e7;
+  }
+}
+
 .container {
   @extend .grid;
   @extend .justify-items-center;

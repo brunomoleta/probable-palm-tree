@@ -22,6 +22,7 @@ export const AccordeonProvider = ({ children }) => {
     "align-items-center": true,
     "details-gap": true,
     heading: true,
+      summary: true
   });
 
   const canvasClasses = clsx({
