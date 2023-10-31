@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github solution](https://github.com/brunomoleta/probable-palm-tree)
-- Live Site URL: [Accordeon app](https://accordeon-indol.vercel.app/)
+- Live Site URL: [Accordeon app](https://accordion-faq-react-scss.netlify.app/)
 
 ## My process
 
@@ -64,21 +64,27 @@ The main feature was to have only ´´´details´´´ tag
 The following is complete with the following code:
 
 ```jsx
+  const activateItem = () => {
+  if (active.length === 0) {
+    addId(id);
+  } else if (active[0] === id) {
+    removeId();
+  } else {
+    removeAddId(id);
+  }
+};
+
 <summary
-          onClick={() => {
-            active.length === 0
-              ? addId(item.id)
-              : active[0] === item.id
-              ? removeId()
-              : removeAddId(item.id);
-          }}
+          onClick={activateItem}
           className={
             active[0] === item.id ? summaryClassesBold : summaryClasses
           }
         >
 ```
 
-To ensure that the layout is responsive on both desktop and mobile, it uses dynamic units, mainly the percentage type of unit, so the illustration stays at the same place wherever the width.
+To ensure that the layout is responsive on both desktop and mobile, it uses dynamic units,
+mainly the percentage type of unit, so the illustration stays at the same place wherever the width.
+
 ```css
 .illustration {
   top: -70%;
@@ -89,11 +95,12 @@ To ensure that the layout is responsive on both desktop and mobile, it uses dyna
     width: 100%;
     left: -3.5rem;
   }
+
   .overflow {
-  @media (min-width: 801px) {
-    overflow: hidden;
+    @media (min-width: 801px) {
+      overflow: hidden;
+    }
   }
-}
 
 }
 ```
@@ -101,33 +108,30 @@ Through this challenge, it was valuable to explore the ```details```tag. Here's 
 
 ```jsx
   <>
-      <details
-        open={ () => null}
-        className={detailsClasses}
-      >
-        <summary
-          onClick={() => {
-            active.length === 0
-              ? addId(item.id)
-              : active[0] === item.id
-              ? removeId()
-              : removeAddId(item.id);
-          }}
-          className={
-            active[0] === item.id ? summaryClassesBold : summaryClasses
-          }
-        >
-          {summary}
-          <RiArrowDownSLine
-            className={active[0] === item.id ? rotated : notRotated}
-            size={30}
-          />
-        </summary>
-        <p className="paragraph">{paragraph}</p>
-      </details>
-      <canvas
-        className={active[0] === item.id ? canvasClasses : "canvas"}
-      ></canvas>
+  <details
+          aria-expanded={active[0] === id}
+          open={()=> true}
+          className={detailsClasses}
+  >
+    <summary
+            onClick={activateItem}
+            className={summaryClass}
+    >
+      {summary}
+      <RiArrowDownSLine
+              className={arrowClass}
+              size={32}
+              strokeWidth={active[0] === id ? 2.5 : 1}
+              color={active[0] === id && "var(--color-bg)"}
+      />
+    </summary>
+    <p className={active[0] === id ? "paragraph medium" : "paragraph"}>
+      {paragraph}
+    </p>
+  </details>
+  <canvas
+          className={active[0] === id ? canvasClasses : "canvas"}
+  ></canvas>
     </>
 ```
 

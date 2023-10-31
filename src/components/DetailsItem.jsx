@@ -33,28 +33,23 @@ export const DetailsItem = (props) => {
     <>
       <details
         aria-expanded={active[0] === id}
-        open={()=> true}
+        open={() => true}
         className={detailsClasses}
       >
-        <summary
-          onClick={activateItem}
-          className={summaryClass}
-        >
+        <summary onClick={activateItem} className={summaryClass}>
           {summary}
           <RiArrowDownSLine
             className={arrowClass}
             size={32}
             strokeWidth={active[0] === id ? 2.5 : 1}
-            color={active[0] === id && "var(--color-bg)"}
+            color="color-red"
           />
         </summary>
         <p className={active[0] === id ? "paragraph medium" : "paragraph"}>
           {paragraph}
         </p>
       </details>
-      <canvas
-        className={active[0] === id ? canvasClasses : "canvas"}
-      ></canvas>
+      <canvas className={active[0] === id ? canvasClasses : "canvas"}></canvas>
     </>
   );
 };
